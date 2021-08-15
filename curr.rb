@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require "httparty"
 require "nokogiri"
 require "colorize"
@@ -10,6 +11,7 @@ to=gets.strip.upcase
 print "Enter the amount :- ".colorize(:orange)
 am=gets.strip.to_i
 url="https://www.xe.com/currencyconverter/convert/?Amount=#{am}&From=#{from}&To=#{to}"
+
 def cal url 
     req=HTTParty.get(url)
     if req.code == 200
